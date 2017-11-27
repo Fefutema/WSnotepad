@@ -9,6 +9,9 @@ import java.util.List;
 @Repository
 public interface NotaRepository extends MongoRepository<Nota, String>{
 
-    public List<Nota> findByTitulo(String titulo);
+    public Nota findByTitulo(String titulo);
+
+
+
 
 }

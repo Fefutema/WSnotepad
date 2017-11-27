@@ -14,10 +14,10 @@ public class NotaService {
     private NotaRepository notaRepository;
 
     public void salvar(Nota nota){
-        List<Nota> notas =  notaRepository.findByTitulo(nota.getTitulo());
+        Nota notaR =  notaRepository.findByTitulo(nota.getTitulo());
 
-        if(notas != null && !notas.isEmpty()){
-            nota.setId(notas.get(0).getId());
+        if(notaR != null && !notaR.getId().equalsIgnoreCase("")){
+            nota.setId(notaR.getId());
         }
 
         notaRepository.save(nota);
@@ -28,10 +28,10 @@ public class NotaService {
     }
 
     public Nota buscar(String titulo) {
-        List<Nota> notas =  notaRepository.findByTitulo(titulo);
+        Nota notaR =  notaRepository.findByTitulo(titulo);
 
-        if(notas != null && !notas.isEmpty()){
-            return notas.get(0);
+        if(notaR != null && !notaR.getId().equalsIgnoreCase("")){
+            return notaR;
         }else {
             return new Nota();
         }
