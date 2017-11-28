@@ -11,7 +11,4 @@ public interface NotaRepository extends MongoRepository<Nota, String>{
 
     public Nota findByTitulo(String titulo);
 
-
-
-
 }

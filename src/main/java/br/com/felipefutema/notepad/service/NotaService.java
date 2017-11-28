@@ -35,7 +35,14 @@ public class NotaService {
         }else {
             return new Nota();
         }
+    }
 
+    public void excluir(String titulo){
+        Nota nota = notaRepository.findByTitulo(titulo);
+
+        if(nota != null && !nota.getId().equalsIgnoreCase("")) {
+            notaRepository.delete(nota);
+        }
     }
 
 }

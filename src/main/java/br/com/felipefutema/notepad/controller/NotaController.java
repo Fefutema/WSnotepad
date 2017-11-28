@@ -32,4 +32,9 @@ public class NotaController {
         notaService.salvar(nota);
     }
 
+    @DeleteMapping("/titulo/{titulo}")
+    public void excluir(@PathVariable("titulo") String titulo){
+        notaService.excluir(titulo);
+    }
+
 }
